@@ -1,0 +1,501 @@
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", serif;
+    }
+
+    /*NAVBAR*/
+
+    .navbar{
+      background: transparent !important;
+      margin: 50px;
+      z-index: 10;
+    }
+
+    .navbar-menu{
+      background: #FFF;
+      padding: 5px 15px;
+      border-radius: 30px;
+    }
+
+    .logo-ctu{
+      height: 80px;
+      width: auto;
+    }
+
+    /*BANNER*/
+
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      background: url('../img/banner.png') no-repeat right center;
+      background-size: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0) 70%);
+    }
+
+    .hero-content {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      padding: 2rem;
+    }
+
+    .text-left, .text-right {
+      width: 45%;
+      z-index: 1;
+    }
+
+    .text-left h1, .text-right p {
+      margin: 0;
+      color: #333;
+    }
+
+    .titulo-banner-ctu{
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .pill-ctu-azul{
+      background: #0047BA !important;
+    }
+
+    .btn-primary-ctu{
+      background: #011E41 !important;
+      border: #011E41;
+      border-radius: 30px;
+    }
+
+    /*SECCION CALCULADORA*/
+
+    .image-section {
+      position: relative;
+      padding: 2rem 0;
+      background: url('../img/bg-calculator.png') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+    }
+
+    .image-section-buttons {
+      bottom: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .image-section-buttons a {
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+
+    .button-ctu-azul {
+      background-color: #0033cc;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 1;
+      position: relative;
+    }
+
+    .button-ctu-azul::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 100%;
+      height: 100%;
+      background-color: #002699;
+      border-radius: 5px;
+      z-index: -1;
+      transform: rotate(-0deg);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-ctu-azul:hover {
+      background-color: #002699;
+    }
+
+    .tasa-del-dia{
+      margin-top: -80px !important;
+      position: relative;
+      background: #FFFFFF;
+      padding: 60px 40px;
+      border-radius: 30px;
+    }
+    .tasa-del-dia h1{
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .img-coin{
+      width: 80px;
+      margin-top: -110px;
+    }
+
+    .button-ctu-azul-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .input-ctu{
+      border-radius: 5px;
+    }
+
+    .btn-form-ctu{
+      background: #FFF;
+      border: #CCC 1px solid;
+      color: #212529;
+    }
+
+    .form-calculadora{
+      padding: 70px 40px;
+      border-radius: 30px;
+      background: #FFF;
+    }
+
+    /*PILLS*/
+    .pill-ctu-amarillo{
+      background: #FDE021 !important;
+      color: #0047BA !important;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 300;
+      padding: 5px 8px;
+      border-radius: 5px;
+    }
+
+
+    /*  NOSOTROS  */
+
+    #nosotros{
+      height: 4rem 0;
+    }
+
+    .img-nosotros{
+      width: 80%;
+      border-radius: 0px 30px 30px 0px;
+      margin-left: -30%;
+      overflow-x: hidden;
+      margin-top: 20%;
+    }
+    .trayectoria-ctu {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .contenedor-azul-nosotros{
+      background: #0047ba;
+      color: #FFF;
+      border-radius: 30px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+      min-width: 300px;
+      max-width: 520px;
+      padding: 20px;
+      float: right;
+      margin-top: -30px;
+      margin-right: 5%px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .trayectoria-ctu h1{
+      text-transform: uppercase;
+      font-weight: 900;
+      margin: 0;
+    }
+    .trayectoria-ctu img{
+      width: 10%;
+    }
+    .trayectoria-ctu-p{
+      width: 80%;
+    }
+
+    @media (max-width: 768px) {
+      .img-nosotros {
+        width: 100%;
+      }
+    }
+
+    .btn-ctu-amarillo{
+      background: #FDE021;
+      border-radius: 30px;
+      padding: 8px 20px;
+      float: right;
+      margin-right: 50%;
+      margin-top: 30px;
+    }
+
+    .btn-ctu-amarillo:hover{
+      background: #011E41;
+      color: #FFF;
+    }
+
+    /* CTA */
+
+    .cta-us{
+      border-radius: 30px;
+      text-transform: uppercase;
+    }
+
+    .cta-us h1{
+      font-weight: 900;
+    }
+
+    .pill-gris{
+      background: #EFF0F2;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 5px;
+      border-radius: 5px;
+      color:#0047BA;
+    }
+    .pill-azul-claro{
+      background: #0047BA;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 5px;
+      border-radius: 5px;
+      color:#FFF;
+    }
+    .pill-azul-oscuro{
+      background: #011E41;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 5px;
+      border-radius: 5px;
+      color:#FFF;
+    }
+    .pill-amarillo{
+      background: #FDE021;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 5px;
+      border-radius: 5px;
+      color:#011E41;
+    }
+
+    /* QUOTE  */
+
+    #quote{
+      height: 90vh;
+      background: url(../img/quote.png) left top no-repeat;
+      background-size: cover;
+      padding-top: 100px;
+    }
+
+    .h1-quote{
+      text-transform: uppercase;
+      font-weight: 900;
+      margin-left: 30px;
+      margin-bottom: 30px;
+    }
+
+    .swiper {
+      width: 100%;
+      height: auto;
+    }
+
+    .swiper-slide {
+      text-align: left;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 30px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .comilla{
+      font-size: 50px;
+      color: #0047BA;
+    }
+
+    .swiper-pagination {
+      position: absolute; /* Cambia posición para colocarlo fuera del swiper */
+      bottom: -20px; /* Se mueve hacia abajo respecto al contenedor */
+      text-align: center;
+      border-radius: 20px;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background: #fff; /* Color blanco para bullets inactivos */
+      opacity: 1;
+      margin: 0 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #FFD700; /* Amarillo para el bullet activo */
+    }
+
+
+    /* PASOS */
+
+    #pasos{
+      height: 100vh;
+      background: url(../img/video-bg.png) no-repeat ;
+      background-size: cover;
+      background-position-x: 30%;
+      background-position-7: 50%;
+    }
+
+    .numero-pasos{
+      font-size: 8em;
+      color: #0047BA;
+      font-weight: 300;
+    }
+
+    .contenedor-paso{
+      border-radius: 30px;
+      text-align: left;
+      background: #FFF;
+      margin: -50px 20px auto 20px;
+      position: relative;
+    }
+
+    #pasos .btn-play {
+      background: none;
+      border: none;
+      font-size: 4rem; /* Tamaño del icono */
+      color: #0047BA; /* Cambia el color según tu diseño */
+      cursor: pointer;
+      background: #FFF;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+    }
+
+    #pasos .btn-play:hover {
+      color: #FFD700; /* Cambia el color al pasar el mouse */
+    }
+
+
+    /* FAQS */
+
+    #faqs{
+      background: url(../img/faqs.png) no-repeat left center;
+      background-size: cover;
+      height: 100vh;
+    }
+
+    .h1-faqs{
+      width: auto;
+      height: 100px;
+      font-size: 5em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .pill-faq-azul{
+      background: #0047BA !important;
+      font-size: 15px !important;
+      margin-top: -100px;
+    }
+
+    #acordeon-faqs .card {
+      margin: 10px 2px;
+    }
+
+    /* FOOTER */
+
+    #footer{
+      background: url(../img/bg-footer.png);
+      height: 100vh;
+    }
+
+    .contacto-footer{
+      background: #ffffff;
+      border-radius: 30px;
+    }
+
+    .btn-enviar{
+      background: #0047BA;
+      border-radius: 30px;
+      color: #ffffff;
+      padding: 8px 20px;
+    }
+
+    .btn-enviar:hover{
+      background: #011E41;
+      color: #ffffff;
+    }
+
+    .datos-contacto{
+      font-size: 14px;
+      color: #45454599;
+    }
+
+    .datos-contacto h4{
+      font-size: 16px;
+      color: #0047BA;
+      text-decoration: underline;
+    }
+
+    .button-ctu-amarillo {
+      background-color: #E8C900;
+      border: none;
+      color: #0047BA;
+      font-size: 3em;
+      text-transform: uppercase;
+      font-weight: 900;
+      padding: 20px 50px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 1;
+      position: absolute;
+      margin-top: -80px;
+    }
+
+    .button-ctu-amarillo::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 100%;
+      height: 100%;
+      background-color: #FDE021;
+      border-radius: 5px;
+      z-index: -1;
+      transform: rotate(-0deg);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-ctu-amarillo:hover {
+      background-color: #FDE021;
+    }
