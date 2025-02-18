@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
+  <!-- Metadatos esenciales -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap 5 Template</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-oP3p6M6K74ZnOXFjd68BhIszI2dtke6HuzOj6TS5dLmwD9BWjhWjx0UG1EzJqBjc" crossorigin="anonymous"></script>
+  
+  <!-- SEO -->
+  <title>Cambia Tus Euros | Envío de dinero rápido y seguro</title>
+  <meta name="description" content="Cambia Tus Euros te ofrece un servicio rápido y seguro para enviar dinero a Venezuela. Cambia tus euros por bolívares sin comisiones ocultas.">
+  <meta name="keywords" content="cambio de euros a bolívares, enviar dinero a Venezuela, cambio seguro, remesas Venezuela">
+  <meta name="author" content="Cambia Tus Euros">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/styles.css">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Google Fonts (Poppins) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="assets/styles.css">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-oP3p6M6K74ZnOXFjd68BhIszI2dtke6HuzOj6TS5dLmwD9BWjhWjx0UG1EzJqBjc" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
 <main>
@@ -32,7 +57,7 @@
             <a class="nav-link" href="#nosotros">¡Conócenos!</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#cambiaTusEuros">Cambia tus Euros</a>
+            <a class="nav-link" href="#calculadora">Cambia tus Euros</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#pasos">¿Cómo Cambiar?</a>
@@ -46,7 +71,7 @@
         </ul>
         <div class="m-2"></div>
         <ul class="navbar-menu navbar-nav ml-5 shadow">
-          <li class="nav-item"><a class="nav-link m-2"  href="login.html"><i class="bi bi-person-circle"></i></a></li>
+          <li class="nav-item"><a href="login.html" class="m-2"><i class="bi bi-person-circle"></i></a></li>
         </ul>
       </div>
     </div>
@@ -61,12 +86,12 @@
         <p class="mt-4"><a href="#" class="btn btn-primary btn-primary-ctu">¡Haz clic para empezar!</a></p>
       </div>
       <div class="text-right">
-      
+        <p></p>
       </div>
     </div>
   </section>
 
-  <section class="image-section">
+  <section class="image-section" id="calculadora">
     <div class="container-fluid">
       <div class="row">
         <!-- Contenedor izquierdo -->
@@ -76,43 +101,48 @@
         <!-- Contenedor derecho -->
         <div class="col-md-6 container row mb-5">
           <div class="tasa-del-dia shadow text-center col-md-7">
-            <img src="img/coin.png" class="img-fluid img-coin">
-            <h1 class="text-center">Tasa del <br>día</h1>
-            <span class="button-ctu-container"><h1 class="button-ctu-azul">36.33</h1></span>
+              <img src="img/coin.png" class="img-fluid img-coin">
+              <h1 class="text-center">Tasa del <br>día</h1>
+              <span class="button-ctu-container">
+                  <h1 id="tasa-del-dia" class="button-ctu-azul">Cargando...</h1>
+              </span>
           </div>
+
 
           <div class="col-md-6 text-center mb-5 mt-5">
             <span class="pill-ctu-amarillo">Calcula tu envío</span>
           </div>
 
           <div class="shadow p-3 form-calculadora col-md-7">
-            <form>
+            <form id="exchange-form">
               <div class="input-group mt-3 mb-3 input-ctu">
-                <input type="text" class="form-control" placeholder="1" value="1">
-                <button type="button" class="btn btn-primary btn-form-ctu dropdown-toggle" data-bs-toggle="dropdown">
-                  <span id="selected-coin-1">EUROS</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item">EUROS</a></li>
-                  <li><a class="dropdown-item">BOLÍVARES</a></li>
-                  <li><a class="dropdown-item">DÓLARES</a></li>
-                </ul>
+                  <input type="text" id="amount" class="form-control" placeholder="1" value="1">
+                  <button type="button" class="btn btn-primary btn-form-ctu dropdown-toggle" data-bs-toggle="dropdown">
+                      <span id="selected-coin-1">EUROS</span>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" onclick="changeCurrency('EUROS')">EUROS</a></li>
+                      <li><a class="dropdown-item" onclick="changeCurrency('BOLÍVARES')">BOLÍVARES</a></li>
+                  </ul>
               </div>
+
               <div class="input-group mt-3 mb-3 input-ctu">
-                <input type="text" class="form-control" placeholder="1" value="63.98">
-                <button type="button" class="btn btn-primary btn-form-ctu dropdown-toggle" data-bs-toggle="dropdown">
-                  <span id="selected-coin-1">BOLÍVARES</span>
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item">EUROS</a></li>
-                  <li><a class="dropdown-item">BOLÍVARES</a></li>
-                  <li><a class="dropdown-item">DÓLARES</a></li>
-                </ul>
+                  <input type="text" id="converted-amount" class="form-control" placeholder="0" readonly>
+                  <button type="button" class="btn btn-primary btn-form-ctu dropdown-toggle" data-bs-toggle="dropdown">
+                      <span id="selected-coin-2">BOLÍVARES</span>
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" onclick="changeCurrency('EUROS')">EUROS</a></li>
+                      <li><a class="dropdown-item" onclick="changeCurrency('BOLÍVARES')">BOLÍVARES</a></li>
+                  </ul>
               </div>
+
               <div class="input-group mt-3 mb-3">
-                <buttom type="button" class="btn btn-primary btn-primary-ctu">Consultar</buttom>
+                  <button type="button" class="btn btn-primary btn-primary-ctu" onclick="fetchExchangeRate()">Consultar</button>
               </div>
-            </form>
+
+              <div class="" id="result" style="display: none;"></div>
+          </form>
           </div>
 
         </div>
@@ -121,8 +151,8 @@
           <!-- Botones de descarga -->
           <div class=" mt-auto mb-3 text-center ">
             <p>¡Descarga la App!</p>
-            <a href="#" class="btn btn-link" style="width: 250px; border-radius: 20px;"><img src="img/ios-logo.png" class="img-fluid"></a>
-            <a href="#" class="btn btn-link" style="width: 250px; border-radius: 20px;"><img src="img/android-logo.png" class="img-fluid"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.cambiatuseuros.app" target="_blank" class="btn btn-link" style="width: 250px; border-radius: 20px;"><img src="img/ios-logo.png" class="img-fluid"></a>
+            <a href="https://apps.apple.com/us/app/cambia-tus-euros/id1607910704" target="_blank" class="btn btn-link" style="width: 250px; border-radius: 20px;"><img src="img/android-logo.png" class="img-fluid"></a>
           </div>
         </div>
 
@@ -162,7 +192,7 @@
   </div>
 </section>
 
-<section class="pt-5" id="cambiaTusEuros">
+<section class="pt-5">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-7 mx-auto text-center m-5 shadow p-5 cta-us">
@@ -186,55 +216,45 @@
     <div class="flex-grow-1 col-9 container">
       <div class="row">
         <div class="col-10 mx-auto">
-          <h1 class="h1-quote">Son más de 5.000 <br>clientes satifechos</h1>
+          <h1 class="h1-quote">Son más de 5.000 <br>Clientes satisfechos</h1>
           <!-- Swiper -->
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide shadow p-3">
-                <p><span class="comilla">"</span><br>Excelente trato, total seriedad, y super gentiles, recomendados con los ojos cerrados</p>
-                <p><b>@jorge_lozada</b></p>
-                <p><small>via Instagram</small></p>
-              </div>
-              <div class="swiper-slide shadow p-3">
-                <p><span class="comilla">"</span><br>Excelente trato, total seriedad, y super gentiles, recomendados con los ojos cerrados</p>
-                <p><b>@jorge_lozada</b></p>
-                <p><small>via Instagram</small></p>
-              </div>
-              <div class="swiper-slide shadow p-3">
-                <p><span class="comilla">"</span><br>Excelente trato, total seriedad, y super gentiles, recomendados con los ojos cerrados</p>
-                <p><b>@jorge_lozada</b></p>
-                <p><small>via Instagram</small></p>
-              </div>
-              <div class="swiper-slide shadow p-3">
-                <p><span class="comilla">"</span><br>Excelente trato, total seriedad, y super gentiles, recomendados con los ojos cerrados</p>
-                <p><b>@jorge_lozada</b></p>
-                <p><small>via Instagram</small></p>
-              </div>
-              <div class="swiper-slide shadow p-3">
-                <p><span class="comilla">"</span><br>Excelente trato, total seriedad, y super gentiles, recomendados con los ojos cerrados</p>
-                <p><b>@jorge_lozada</b></p>
-                <p><small>via Instagram</small></p>
-              </div>
-              <div class="swiper-slide shadow p-3">
-                <p><span class="comilla">"</span><br>Excelente trato, total seriedad, y super gentiles, recomendados con los ojos cerrados</p>
-                <p><b>@jorge_lozada</b></p>
-                <p><small>via Instagram</small></p>
-              </div>
-              <div class="swiper-slide shadow p-3">
-                <p><span class="comilla">"</span><br>Excelente trato, total seriedad, y super gentiles, recomendados con los ojos cerrados</p>
-                <p><b>@jorge_lozada</b></p>
-                <p><small>via Instagram</small></p>
-              </div>
-              <div class="swiper-slide shadow p-3">
-                <p><span class="comilla">"</span><br>Excelente trato, total seriedad, y super gentiles, recomendados con los ojos cerrados</p>
-                <p><b>@jorge_lozada</b></p>
-                <p><small>via Instagram</small></p>
-              </div>
-              <div class="swiper-slide shadow p-3">
-                <p><span class="comilla">"</span><br>Excelente trato, total seriedad, y super gentiles, recomendados con los ojos cerrados</p>
-                <p><b>@jorge_lozada</b></p>
-                <p><small>via Instagram</small></p>
-              </div>
+              <div class="swiper-slide shadow p-4 text-center">
+              <p class="quote-text"><span class="comilla">"</span><br>Desde que llegué a España en 2019 comencé a enviar dinero con ellos a mis padres en Venezuela y hasta la fecha aun sigo enviando con ellos! 100% confiables, responsables y tengan la seguridad que el dinero siempre llega con una buena tasa.</p>
+              <p><b>Vicente Fernandez</b></p>
+              <p><small>via Google Reviews</small></p>
+            </div>
+            <div class="swiper-slide shadow p-4 text-center">
+              <p class="quote-text"><span class="comilla">"</span><br>Yo soy cliente habitual ya tengo unos 2 o 3 años con ellos y confío plenamente en Cambiatuseuros porque siempre me resuelven mis necesidades de envío de remesas. Además todo el personal es muy atento y responsable. 100% recomendados.</p>
+              <p><b>Emily Guarate</b></p>
+              <p><small>via Google Reviews</small></p>
+            </div>
+            <div class="swiper-slide shadow p-4 text-center">
+              <p class="quote-text"><span class="comilla">"</span><br>Confianza plena en este equipo. Serios, responsables y rápidos, además tienen la mejor tasa. Llevo varios años con ellos y los recomiendo ¡La atención de 💯 siempre! Muy contenta.</p>
+              <p><b>Maira Luisa Delgado Rojas</b></p>
+              <p><small>via Google Reviews</small></p>
+            </div>
+            <div class="swiper-slide shadow p-4 text-center">
+              <p class="quote-text"><span class="comilla">"</span><br>Tengo más de 1 año enviando dinero a Venezuela y estoy muy contenta con el trato y la rapidez de atención que brindan. Los recomiendo a todos con los ojos cerrados, 100% confiables.. Agradecida🫶🏻.</p>
+              <p><b>Camila José Flores</b></p>
+              <p><small>via Google Reviews</small></p>
+            </div>
+            <div class="swiper-slide shadow p-4 text-center">
+              <p class="quote-text"><span class="comilla">"</span><br>Transferencia inmediata, segura y excelente atención, y como ellos dicen llevando alegría a nuestra familia en Venezuela, y tasa de cambio alta, tengo desde el año 2022 con Cambiatuseuros y son geniales.</p>
+              <p><b>Adriana Perez</b></p>
+              <p><small>via Google Reviews</small></p>
+            </div>
+            <div class="swiper-slide shadow p-4 text-center">
+              <p class="quote-text"><span class="comilla">"</span><br>Siempre responsables, respuesta inmediata y muy amables. Los recomiendo al 100.</p>
+              <p><b>Esthefania Lopez Teran</b></p>
+              <p><small>via Google Reviews</small></p>
+            </div>
+            <div class="swiper-slide shadow p-4 text-center">
+              <p class="quote-text"><span class="comilla">"</span><br>Aplicación muy segura, confiable y rápida para enviar dinero a Venezuela, estoy súper satisfecho a la hora de una duda o algún problema, me lo suelen resolver en tiempo récord.</p>
+              <p><b>Eduard Gutiérrez</b></p>
+              <p><small>via Google Reviews</small></p>
+            </div>
             </div>
             <!--div class="swiper-pagination"></div-->
           </div>
@@ -250,7 +270,49 @@
     <h1 class="h1-quote">pasos para <br>empezar a cambiar</h1>
     <div class="row">
       <div class="col-md-6 container-fluid">
-        <div class="row">
+        <!-- Swiper para móviles -->
+        <div class="d-block d-md-none">
+          <div class="swiper pasosSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <h1 class="numero-pasos">01</h1>
+                </div>
+                <div class="p-4 contenedor-paso">
+                  <p>Regístrate en nuestra web y llena todos los campos.</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <h1 class="numero-pasos">02</h1>
+                </div>
+                <div class="p-4 contenedor-paso">
+                  <p>Revisa tu correo electrónico y verifica el código de validación.</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <h1 class="numero-pasos">03</h1>
+                </div>
+                <div class="p-4 contenedor-paso">
+                  <p>Toma una foto legible a tu identificación y súbela a la web*</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="text-center">
+                  <h1 class="numero-pasos">04</h1>
+                </div>
+                <div class="p-4 contenedor-paso">
+                  <p>¡Espera tu validación y empieza a cambiar tus euros!</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Grid para tablets y PC -->
+        <div class="row d-none d-md-flex">
           <div class="col-md-6 p-3">
             <div class="text-center">
               <h1 class="numero-pasos">01</h1>
@@ -284,11 +346,13 @@
             </div>
           </div>
         </div>
+
         <div>
           <p>* Verifica que tu documento esté vigente, que se pueda identificar bien la foto y que se lea el nombre completo.</p>
           <a href="" class="btn btn-ctu-amarillo">¡Empezar Ahora!</a>
         </div>
       </div>
+
       <div class="col-md-6 d-flex justify-content-center align-items-center">
         <button class="btn-play"><i class="bi bi-play-circle"></i></button>
       </div>
@@ -297,13 +361,13 @@
 </section>
 
 
+
 <section id="faqs">
   <div class="container">
     
     <div class="row">
       <div class="col-md-6 d-flex justify-content-center align-items-center">
-        <h1 class="h1-faqs text-center">Preguntsas <br>frecuentes <br><span class="badge bg-primary pill-faq-azul">Nos preguntan nuestros clientes</span></h1>
-        
+        <h1 class="h1-faqs text-center">Preguntas  <br>Frecuentes <br><span class="badge bg-primary pill-faq-azul">Nos preguntan nuestros clientes</span></h1>
       </div>
       <div class="col-md-6 container-fluid">
          <div id="acordeon-faqs">
@@ -316,7 +380,13 @@
               </div>
               <div id="uno" class="collapse" data-bs-parent="#acordeon-faqs">
                 <div class="card-body">
-                  Lorem ipsum..
+                  <p>Para ser nuestro cliente VIP:</p>
+                  <ol>
+                    <li>Debes registrarte, subir tus datos y aceptar los términos.</li>
+                    <li>Verifica tu correo electrónico con el código enviado.</li>
+                    <li>Verifica tu identidad subiendo una imagen de tu identificación.</li>
+                  </ol>
+                  <p>¡Ya estás listo para enviar tu remesa!</p>
                 </div>
               </div>
             </div>
@@ -329,7 +399,7 @@
               </div>
               <div id="dos" class="collapse" data-bs-parent="#acordeon-faqs">
                 <div class="card-body">
-                  Lorem ipsum..
+                  <p>El envío mínimo es de 20€.</p>
                 </div>
               </div>
             </div>
@@ -337,12 +407,12 @@
             <div class="card">
               <div class="card-header">
                 <a class="collapsed btn" data-bs-toggle="collapse" href="#tres">
-                  ¿Desde qué países puedo realizar mi envío? 
+                  ¿Desde qué países puedo realizar envíos?
                 </a>
               </div>
               <div id="tres" class="collapse" data-bs-parent="#acordeon-faqs">
                 <div class="card-body">
-                  Lorem ipsum..
+                  <p>Desde cualquier parte de la <strong>Unión Europea</strong>.</p>
                 </div>
               </div>
             </div>
@@ -350,12 +420,12 @@
             <div class="card">
               <div class="card-header">
                 <a class="collapsed btn" data-bs-toggle="collapse" href="#cuatro">
-                  ¿Desde qué países puedo realizar mi envío?
+                  ¿Cómo realizar mi primera transacción?
                 </a>
               </div>
               <div id="cuatro" class="collapse" data-bs-parent="#acordeon-faqs">
                 <div class="card-body">
-                  Lorem ipsum..
+                  <p>Desde tu usuario en nuestra página web, en la sección "Nueva transacción".</p>
                 </div>
               </div>
             </div>
@@ -363,12 +433,81 @@
             <div class="card">
               <div class="card-header">
                 <a class="collapsed btn" data-bs-toggle="collapse" href="#cinco">
-                  ¿Desde qué países puedo realizar mi envío?
+                  ¿Cuánto tarda en llegar el dinero a Venezuela?
                 </a>
               </div>
               <div id="cinco" class="collapse" data-bs-parent="#acordeon-faqs">
                 <div class="card-body">
-                  Lorem ipsum..
+                  <p>Una vez recibamos los euros en nuestra cuenta, el dinero llegará en <strong>10 a 60 minutos</strong>.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#seis">
+                  No tengo cuenta bancaria
+                </a>
+              </div>
+              <div id="seis" class="collapse" data-bs-parent="#acordeon-faqs">
+                <div class="card-body">
+                  <p>Puedes solicitar una tarjeta prepago en <strong>CORREOS</strong> y obtener un <strong>IBAN</strong> sin necesidad de un banco.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#siete">
+                  ¿Puedo transferir desde la cuenta de un tercero?
+                </a>
+              </div>
+              <div id="siete" class="collapse" data-bs-parent="#acordeon-faqs">
+                <div class="card-body">
+                  <p>No. La transferencia debe realizarse <strong>desde una cuenta en Europa a tu nombre</strong>.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#ocho">
+                  ¿Cómo tratan mis datos personales?
+                </a>
+              </div>
+              <div id="ocho" class="collapse" data-bs-parent="#acordeon-faqs">
+                <div class="card-body">
+                  <p>Consulta nuestros términos legales, privacidad y cookies en nuestra página web.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#nueve">
+                  ¿Cuál es su horario de trabajo?
+                </a>
+              </div>
+              <div id="nueve" class="collapse" data-bs-parent="#acordeon-faqs">
+                <div class="card-body">
+                  <p>
+                    <strong>Lunes a viernes:</strong> 12:00 - 22:00 horas.<br>
+                    <strong>Sábados:</strong> 13:00 - 21:00 horas.<br>
+                    <em>(Solo en este horario recibirás tus cambios en Venezuela).</em>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#diez">
+                  ¿Por qué debo confiar en ustedes?
+                </a>
+              </div>
+              <div id="diez" class="collapse" data-bs-parent="#acordeon-faqs">
+                <div class="card-body">
+                  <p>Somos una empresa registrada con más de <strong>3 años</strong> de experiencia. 100% confiables.</p>
                 </div>
               </div>
             </div>
@@ -384,7 +523,7 @@
     <div class="row">
       <div class="col-md-7 mx-auto shadow p-5 mt-5 contacto-footer">
         <div class="text-center col-6">
-          <h1 class="button-ctu-amarillo text-center">¡Contactanos!</h1>
+          <h1 class="button-ctu-amarillo text-center">Contáctanos!</h1>
         </div>
         <div class="container-fluid row" style="margin-top: 120px;">
           <div class="col-md-6">
@@ -423,6 +562,10 @@
   </div>
 </footer>
 
+<!-- Burbuja flotante de WhatsApp -->
+<a href="https://wa.me/34672353172" class="whatsapp-float" target="_blank">
+  <i class="bi bi-whatsapp whatsapp-icon"></i>
+</a>
 
 </main>
 
@@ -434,7 +577,7 @@
   <!-- Initialize Swiper -->
   <script>
     var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 4,
+      slidesPerView: 3,
       spaceBetween: 50,
       freeMode: true,
       loop: true,
@@ -457,11 +600,94 @@
           spaceBetween: 20,
         },
         1024: { 
-          slidesPerView: 4, 
+          slidesPerView: 3, 
           spaceBetween: 30,
         },
       },
     });
+
+    var swiper = new Swiper(".pasosSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+     freeMode: true,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false, 
+        pauseOnMouseEnter: true,
+      },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        fetchExchangeRate();
+    });
+
+    let exchangeRate = 1; // Tasa de cambio inicial
+
+    async function fetchExchangeRate() {
+        try {
+            const response = await fetch("https://api.cambiatuseuros.com/api/rate");
+            const data = await response.json();
+            exchangeRate = data.rate;
+            updateConversion();
+        } catch (error) {
+            console.error("Error al obtener la tasa de cambio:", error);
+        }
+    }
+
+    function updateConversion() {
+        const amount = parseFloat(document.getElementById("amount").value) || 0;
+        const fromCurrency = document.getElementById("selected-coin-1").innerText;
+        let convertedAmount = 0;
+
+        if (fromCurrency === "EUROS") {
+            convertedAmount = amount * exchangeRate;
+        } else {
+            convertedAmount = amount / exchangeRate;
+        }
+
+        document.getElementById("converted-amount").value = convertedAmount.toFixed(2);
+        document.getElementById("result").innerText = `Conversión: ${amount} ${fromCurrency} = ${convertedAmount.toFixed(2)} ${fromCurrency === "EUROS" ? "BOLÍVARES" : "EUROS"}`;
+        document.getElementById("result").style.display = "block";
+    }
+
+    function changeCurrency(newCurrency) {
+        const currentCurrency = document.getElementById("selected-coin-1").innerText;
+        if (newCurrency !== currentCurrency) {
+            document.getElementById("selected-coin-1").innerText = newCurrency;
+            document.getElementById("selected-coin-2").innerText = newCurrency === "EUROS" ? "BOLÍVARES" : "EUROS";
+            updateConversion();
+        }
+    }
+
+    document.getElementById("amount").addEventListener("input", updateConversion);
+
+
+    async function fetchExchangeRate() {
+        try {
+            const response = await fetch("https://api.cambiatuseuros.com/api/rate");
+            const data = await response.json();
+            exchangeRate = data.rate;
+
+            // Actualiza la conversión y la tasa del día
+            updateConversion();
+            document.getElementById("tasa-del-dia").innerText = exchangeRate.toFixed(2);
+        } catch (error) {
+            console.error("Error al obtener la tasa de cambio:", error);
+            document.getElementById("tasa-del-dia").innerText = "Error";
+        }
+    }
+
+    // Ejecutar al cargar la página
+    document.addEventListener("DOMContentLoaded", fetchExchangeRate);
+
+
   </script>
 </body>
 </html>
